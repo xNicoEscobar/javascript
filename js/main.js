@@ -11,15 +11,31 @@ if (nombre_juego == "") {
 } else { }
 
 
-let precio_juego = Number(prompt("Ahora, ingrese el precio del " + nombre_juego + " tal cual le figura por Steam. Le calcularemos el precio final con los 800 impuestos aplicados que tenemos en Argentina 🤑 😎"))
+(alert("A continuación, le calcularemos el precio final con los 800 impuestos aplicados que tenemos en nuestra querida Argentina 🤑 😎"))
 let imp_totales = 1.79
+
+
+
+let precio_juego = prompt("ingrese el valor del "+nombre_juego+" en números sin puntos ni comas. Si desea salir escriba fin");
+while (true) {
+    if (!isNaN(precio_juego) && precio_juego != null && precio_juego != "") {
+        alert('Calculando precio...');
+        break;
+    } else if (precio_juego == 'fin') {
+        break;
+    } else {
+        alert('Ingrese un valor correcto');
+        continue;
+
+    }
+}
 
 
 let valor_final = precio_juego * imp_totales
 
-if (precio_juego == "" && String) {
-    alert("Por favor, ingrese el valor en números sin puntos ni comas")
-} else { alert("Su juego: " + nombre_juego + ", va a tener un valor final de: $" + valor_final + " argentinos.\nLos impuestos aplicados a la fecha de hoy son: \nIVA Servicios digitales = +21% \nPercepción impuesto IIBB provincia = +5% \nPercepción impuesto RG AFIP 4815 = +45% \nImpuesto PAIS = +8%") }
+alert("El juego: " + nombre_juego + ", va a tener un valor final de: $" + valor_final + " argentinos.\nLos impuestos aplicados a la fecha de hoy son: \nIVA Servicios digitales = +21% \nPercepción impuesto IIBB provincia = +5% \nPercepción impuesto RG AFIP 4815 = +45% \nImpuesto PAIS = +8%")
+
+
 
 /*
 
